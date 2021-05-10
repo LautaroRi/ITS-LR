@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Link JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="row card-panel blue-grey lighten-1 center-align" style="margin: 2em;">
+        <div><img
+                src="https://tallertronica.files.wordpress.com/2015/03/ohms-law2.gif?w=358"
+                alt=""></div>
+        <form class="col s4">
+            <div>
+                <input  id="d1_resistencia" type="number" placeholder="Resistencia">
+                <button id="c1_resistencia" style="margin:2em;" type="button" class="btn blue-grey darken-3">Calcular Resistencia</button>
+            </div>
+        </form>
+        <form class="col s4">
+            <div>
+                <input  id="d2_intensidad" type="number" placeholder="Intesidad">
+                <button id="c2_intensidad" style="margin:2em;" type="button" class="btn blue-grey darken-3">Calcular Intensidad</button>
+            </div>
+            <input type="text" id="resultado" placeholder="Resultado Global" readonly>
+            <button id="refrescar" type="button" class="btn blue-grey darken-3">Recargar</button>
+        </form>
+        <form class="col s4">
+            <div>
+                <input  id="d3_voltaje" type="number" placeholder="Voltaje">
+                <button id="c3_voltaje" style="margin:2em;" type="button" class="btn blue-grey darken-3">Calcular Voltaje</button>
+            </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
