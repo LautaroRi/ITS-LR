@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduccion a VueJS</title>\
+        <script src="https://unpkg.com/vue@next"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+        <body>
+            <div id="app">
+
+
+                <h3>{{nombre}}</h3>
+                <p>{{apellido}}</p>
+
+                <div class="mb-3 mt-3">
+<!-- No hace falta ponerle la {{}} cuando introduzco la propiedad en v-model-->
+<!-- Los v-model suelen ser datos bidireccionales, no se le coloca un dato de origen ya-->
+                    <input type="number" v-model="numero" placeholder="Ingrese localidad">
+                </div>
+<!--La doble llave significa que forzan la compatibilidad para impactar la informacion de JS en HTML-->
+                <button class="btn btn-primary" v-on:click="modificar">Modificar Nombre</button>
+
+
+                <div class="mb-3 mt-3">
+                    <ul class="list-group">
+<!-- El "usuario of usuarios" el usuario es una variable que yo creo, pero extrae datos de lista_usuarios, que ya estaba declarada-->
+<!-- el v-for hace que cada usuario entre en un bucle, por el for. el /v es una propiedad propia de Vue.js-->
+                        <li v-for="usuario of lista_usuarios" class="list-group-item">{{usuario.name}}</li>
+                      </ul>
+
+
+                </div>
+            </div>
+
+            <script>
+                
+                const mispropiedades = {
+//data son las propiedades que tendra un objeto
+                    data(){
+                        return {
+                            nombre:'Pepito',
+                            apellido:'Argento',
+                            numero:null,
+                            lista_usuarios:[]
+                        }
+                    },
+
+                    methods: {
+                        modificar(){
+                            this.nombre = 'Juan';
+                            console.log(4*this.numero)
+//Al ponerle un 4* se le hace que sea un calculo, y se imprime en tiempo real segun lo que yo ingreso en el campo cuando utilice HTML
+//This me refiero a una propiedad de data, no a una constante fuera
+//Con this tambien lo puedo editar la variable de nombre, como hicimos arriba
+                        },
+                        mostrarAlerta(){
+                            alert('Probando la propiedad mounted')
+                        },
+                        async mostrarUsuarios(){
+                            const resultado = await fetch("https://jsonplaceholder.typicode.com/users");
+                            this.lista_usuarios = await resultado.json();
+//el this esta llenando la variable usuarios de data con lo que vaya a traer del json asi no muere aca, y lo puedo tuilizar en todo el HTML
+                        }
+                    },
+//mounted elegi que cosas quiere imprimir a penas carga la pagina
+                    mounted(){
+                        this.mostrarUsuarios();
+                    }
+                }
+
+
+
+                Vue.createApp(mispropiedades).mount("#app")
+
+
+            </script>
+            
+        </body>
+</html>
