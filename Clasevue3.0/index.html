@@ -62,7 +62,7 @@
                         async mostrarUsuarios(){
                             const resultado = await fetch("https://jsonplaceholder.typicode.com/users");
                             this.lista_usuarios = await resultado.json();
-//el this esta llenando la variable usuarios de data con lo que vaya a traer del json asi no muere aca, y lo puedo tuilizar en todo el HTML
+//el this esta llenando la variable lista_usuarios de data con lo que vaya a traer del json asi no muere aca, y lo puedo tuilizar en todo el HTML
                         }
                     },
 //mounted elegi que cosas quiere imprimir a penas carga la pagina
