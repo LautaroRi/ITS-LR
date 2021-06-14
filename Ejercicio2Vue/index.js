@@ -26,11 +26,7 @@ const mispropiedades = {
             // El splice tiene varios comportamientos. El primer text del parentesis, indica la POSICION, y la segunda indica CANTIDAD de elementos. Borra incluido, el punto de partida.
         },
     },
-
     mounted() {
-
     }
-
 }
-
 Vue.createApp(mispropiedades).mount("#app");
