@@ -2,6 +2,7 @@
 <html lang="en">
 <!--El LOCALSTORAGE Solo almacena String, pero se puede guardar datos, haciendo pasaje de arrays a string, o alternativas-->
 <!--El LOCALSTORAGE almacena LISTAS también-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +22,7 @@
             <a class="navbar-brand" href="#">Ejercicio N°4 Vue</a>
         </div>
     </nav>
-    <div  id= "App" class="container mt-3">
+    <div id="App" class="container mt-3">
 
         <div class="row">
 
@@ -29,7 +30,7 @@
 
                 <h4 class="mb-3">Tareas</h4>
                 <div class="mb-3">
-                    <button @click= "eliminar" class="btn btn-danger">Eliminación total</button>
+                    <button @click="eliminar" class="btn btn-danger">Eliminación total</button>
                 </div>
 
                 <div class="mb-3">
@@ -42,19 +43,20 @@
                     <input v-model="tiempo" type="text" class="form-control" placeholder="Ingrese Tiempo">
                 </div>
 
-                <button @click= "guardarTarea" class="btn btn-primary">Guardar</button>
-<!--El @ nos ahorra la extension larga de v-on-->
+                <button @click="guardarTarea" class="btn btn-primary">Guardar</button>
+                <!--El @ nos ahorra la extension larga de v-on-->
             </div>
 
             <div class="col-lg-6">
                 <ol class="list-group list-group-numbered">
-                    <li v-for="(tarea,index) of lista_tareas" class="list-group-item d-flex justify-content-between align-items-start">
-                      <!--tarea del v-for, es una que defino nueva-->
+                    <li v-for="(tarea,index) of lista_tareas"
+                        class="list-group-item d-flex justify-content-between align-items-start">
+                        <!--tarea del v-for, es una que defino nueva-->
                         <div class="ms-2 me-auto">
-                        <div class="fw-bold">{{tarea.descripcion}}</div>
-                      </div>
-                      <span class="badge bg-primary rounded-pill" style="margin-right: 10px;">{{tarea.tiempo}}</span>
-                      <button @click="eliminarTarea(index)" class="btn btn-danger btn-sm">x</button>
+                            <div class="fw-bold">{{tarea.descripcion}}</div>
+                        </div>
+                        <span class="badge bg-primary rounded-pill" style="margin-right: 10px;">{{tarea.tiempo}}</span>
+                        <button @click="eliminarTarea(index)" class="btn btn-danger btn-sm">x</button>
                     </li>
                 </ol>
             </div>
