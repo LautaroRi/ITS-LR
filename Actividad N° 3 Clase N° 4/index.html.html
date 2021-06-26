@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de prueba HTML5</title>
+</head>
+
+<body>
+
+    <form>
+
+        <p>
+            <label>Nombre</label>
+            <input type="text" required autofocus>
+            <!--autofocus poscionará automaticamente la barra de escribir en dicho cuadro-->
+        </p>
+        <P>
+            <label>Correo Electrónico</label>
+            <input type="email" required>
+        </p>
+        <p>
+            <label>URL</label>
+            <input type="url" placeholder="Escribe la URL de tu página web">
+            <!-- Placeholder sirve para escribir en el mismo cuadro un texto sombreado de ayuda-->
+        </p>
+        <p>
+            <label>Fecha</label>
+            <input type="date">
+        </p>
+        <p>
+            <label>Tiempo</label>
+            <input type="time">
+        </p>
+        <p>
+            <label>Fecha y Hora</label>
+            <input type="datetime-local">
+        </p>
+        <p>
+            <label>Mes:</label>
+            <input type="month">
+        </p>
+        <p>
+            <label>Semana:</label>
+            <input type="week">
+        </p>
+        <p>
+            <label>Número:</label>
+            <input type="number" min="-10" max="10">
+            <!--min y max son limitadores cuando hay rangos numéricos a respetar-->
+        </p>
+        <p>
+            <label>Teléfono:</label>
+            <input type="tel" placeholder="000-0000000" pattern="[0-9]{3}-[0-9]{7}">
+            <!--pattern lo utilizo para limitar a qué el cliente no ponga un número invalido, por lo tanto,
+                siga el formato con el qué fue creado el type-->
+        </p>
+        <p>
+            <label>Término de búsqueda:</label>
+            <input type="search">
+        </p>
+        <p>
+            <label>Color favorito:</label>
+            <input type="color">
+        </p>
+        <p>
+            <button>Enviar</button>
+        </p>
+    </form>
+
+
+
+</body>
+
+</html>

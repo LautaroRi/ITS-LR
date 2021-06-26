@@ -17,7 +17,6 @@ const datos = {
             this.title = ''; this.url = '';
         },
         mounted(){
-            this.CargarImagen();
         }
     } 
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Introduccion a MaterializeCSS</title>
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <script src="js/materialize.min.js"></script>
+<!-- siempre tengo que tener linkeado y script los archivos del js y el css para los diseños preestablecidos-->   
+    </head>
+    <body>
+        <nav class="deep-purple darken -3">
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo left">Fravega</a>
+
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Socios</a></li>
+                <li><a href="badges.html">Empleados</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+              </ul>
+            </div>
+          </nav>
+        <div class="row">
+<!-- las filas por default traen una division de 12 partes, con medidas ya definidas-->
+<!-- row se utiliza para crear filas, por ende luego columnas-->
+        <div class="col m6 s12 l6 xl6">
+<!--la "m" de la columna, estamos ajustado que la columna se ajusten al 6, siempre y cuando tenga resoluciones medias, en tal caso, deberia justificar cada una, s y l-->
+<!-- la m esta pensado para tablets, la s para celulares, la l para monitores tipos, y el xl para dispositivos mas grandes-->
+        <div class="card teal">
+<!-- teal es el color de la tarjeta de fondo-->
+                    <div class="card-content purple-text">
+                        <span class="card-title green-text">Introducción MCSS</span>
+                        <p>
+                            Breve introducción a MaterializeCSS
+                        </p>
+                    </div>
+                </div>
+<!-- si pongo el style con el width y el porcentaje que yo quiero, ajusto el boton segun el total de columnas que esta ocupando-->          
+        </div>
+
+        <div class="col m6 s12 l6 xl6">
+        <div class="card teal">
+                    <div class="card-content purple-text">
+                        <span class="card-title green-text">Introducción MCSS</span>
+                        <p>
+                            Breve introducción a MaterializeCSS, tarjeta 2
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

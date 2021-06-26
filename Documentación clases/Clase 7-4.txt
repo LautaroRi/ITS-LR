@@ -1,0 +1,1 @@
+Las filas y columnas son clases de CSS. Pueden aplicar colores, margenes, etc. se refiere a colores y dimensiones

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Links referenciales a Materialize e Icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Document</title>
+    </head>
+        <body>
+<!-- NAVBAR Superior-->
+            <nav>
+                <div class="nav-wrapper teal lighten-2">
+                  <a href="#" class="brand-logo">Cliente</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                  </ul>
+                </div>
+            </nav>
+<!-- Primera Columna [Razón Social, Domicilio, Localidad y C.P]-->
+            <div class="row">
+                <form class="col s6">
+                <div class="card-panel grey lighten-5">
+<!-- DIV Razón Social-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="Razón Social" id="rsocial" type="text" class="validate">
+                        </div>
+                    </div>
+<!-- DIV Domicilio-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">house</i>
+                            <input placeholder="Domicilio" id="domicilio" type="text" class="validate">
+                        </div>
+                    </div>
+<!-- DIV Localidad-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input placeholder="Localidad" id="localidad" type="text" class="validate">
+                        </div>
+                    </div>
+<!-- DIV Código Postal-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">code</i>
+                            <input placeholder="Código Postal" id="cpostal" type="number" class="validate">
+                        </div>
+                    </div>
+                </form>
+            </div>
+<!-- Segunda Columna [CUIT, Email y Teléfono]-->
+            <div class="row">
+                <form class= "col s6">
+                <div class="card-panel grey lighten-5">
+<!-- DIV de CUIT-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">keyboard</i>
+                            <input placeholder="CUIT" id="cuit" type="number" class="validate">
+                        </div>
+                    </div>
+<!-- DIV de E-mail-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input placeholder="Correo Electrónico" id="email" type="email" class="validate">
+                        </div>
+                    </div>
+<!-- Div de Teléfono-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone</i>
+                            <input placeholder="Teléfono" id="phone" type="number" class="validate">
+                        </div>
+                    </div>
+<!--Botón de columna N°2-->
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Guardar Cliente
+                    </button>
+                </div>
+                </form>
+            </div>
+        </body>
+</html>

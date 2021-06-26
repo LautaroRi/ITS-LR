@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Boostrap LINK-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!--Vue LINK-->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<!--NAVBAR-->
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mis Pagos</a>
+    </div>
+</nav>
+
+<body>
+    <div id="enlace1" class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-lg-4">
+<!-- CARD IZQUIERDA DE CARGA DE DATOS-->
+                <div class="card text-black bg-light mb-3">
+                    <div class="card-header">Carga de pago</div>
+                    <div class="card-body">
+<!-- Columnas NOMBRE/APELLIDO-->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="form-label">Nombre</label>
+                                <input v-model="nombre" type="text" class="form-control" placeholder="Ingrese Nombre">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-label"> Apellido </label>
+                                <input v-model="apellido" type="text" class="form-control"
+                                    placeholder="Ingrese apellido">
+                            </div>
+                        </div>
+<!-- Columnas DNI/E-MAIL -->
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <label class="form-label">DNI</label>
+                                <input v-model="dni" type="numbre" class="form-control" placeholder="Ingrese DNI">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-label"> Correo </label>
+                                <input v-model="correo" type="email" class="form-control" placeholder="Ingrese E-Mail">
+                            </div>
+                        </div>
+<!-- Columnas CUOTA/IMPORTE-->
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <label class="form-label">Cuota</label>
+                                <input v-model="cuota" type="number" class="form-control" placeholder="Ingrese cuota">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="form-label"> Importe </label>
+                                <input v-model="importe" type="number" class="form-control"
+                                    placeholder="Ingrese Importe">
+                            </div>
+                        </div>
+<!-- iNPUT'S FECHA DE PAGO Y BOTONES GUARDAR PAGO/BORRAR DATOS-->
+                        <label class="form-label mt-3">Fecha de pago</label>
+                        <input v-model="fecha" type="date" class="form-control" placeholder="Ingrese fecha">
+                        <button type="button" class="btn btn-success mt-3" @click="guardarDatos">Guardar pago</button>
+                        <button type="button" class="btn btn-danger mt-3" style="margin-left: 90px;"
+                            @click="borrarDatos">BORRAR DATOS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+<!--CARD DERECHA DE MUESTRA DE DATOS CARGADOS-->
+                <div class="card text-black bg-light mb-3">
+                    <div class="card-header">Grilla pagos</div>
+                    <div class="card-body">
+<!-- TABLA GENERAL-->
+                        <table class="table">
+<!-- HEAD TABLA-->
+                            <thead>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Correo</th>
+                                <th>Cuota</th>
+                                <th>Importe</th>
+                                <th>Fecha</th>
+                            </thead>
+<!-- BODY TABLA-->
+                            <tbody>
+                                <tr v-for="datos of lista_datos">
+                                    <td>{{datos.nombre}}</td>
+                                    <td>{{datos.apellido}}</td>
+                                    <td>{{datos.dni}}</td>
+                                    <td>{{datos.correo}}</td>
+                                    <td>{{datos.cuota}}</td>
+                                    <td>{{datos.importe}}</td>
+                                    <td>{{datos.fecha}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--LLAMADO AL SCRIPT INDEX.JS-->
+    <script src="index.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

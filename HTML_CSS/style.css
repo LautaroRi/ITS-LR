@@ -1,0 +1,15 @@
+.fondo {
+
+    background:red;
+    color: black;
+}
+
+.btn {
+    height: 40px;
+    width: 80px;
+}
+
+.fondo-body {
+    background-image: linear-gradient(to left red blue green);
+
+}
