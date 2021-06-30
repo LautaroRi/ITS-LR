@@ -42,21 +42,22 @@
                     <label class="form-label">Tiempo</label>
                     <input v-model="tiempo" type="text" class="form-control" placeholder="Ingrese Tiempo">
                 </div>
-
-                <button @click="guardarTarea" class="btn btn-primary">Guardar</button>
+<!-- Al poner el "v-if" Estoy haciendo una comparativa para que aparezca el botón cuando yo lo requiera, y no cuando pueda.-->
+                <button v-if="indice == null" @click="guardarTarea" class="btn btn-success float-start">Guardar</button>
+                <button v-if="indice != null" @click="actualizarTarea" class="btn btn-primary float-end">Actualizar</button>
                 <!--El @ nos ahorra la extension larga de v-on-->
             </div>
 
             <div class="col-lg-6">
                 <ol class="list-group list-group-numbered">
-                    <li v-for="(tarea,index) of lista_tareas"
-                        class="list-group-item d-flex justify-content-between align-items-start">
+                    <li v-for="(tarea,index) of lista_tareas" class="list-group-item d-flex justify-content-between align-items-start">
                         <!--tarea del v-for, es una que defino nueva-->
                         <div class="ms-2 me-auto">
                             <div class="fw-bold">{{tarea.descripcion}}</div>
                         </div>
                         <span class="badge bg-primary rounded-pill" style="margin-right: 10px;">{{tarea.tiempo}}</span>
                         <button @click="eliminarTarea(index)" class="btn btn-danger btn-sm">x</button>
+                        <button @click="llenarFormulario(index)" class= "btn btn-info btn-sm" style="margin-left: 5px;">Edit</button>
                     </li>
                 </ol>
             </div>

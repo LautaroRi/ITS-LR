@@ -62,12 +62,11 @@
                                     placeholder="Ingrese Importe">
                             </div>
                         </div>
-<!-- iNPUT'S FECHA DE PAGO Y BOTONES GUARDAR PAGO/BORRAR DATOS-->
+<!-- INPUT'S FECHA DE PAGO Y BOTONES GUARDAR PAGO/BORRAR DATOS-->
                         <label class="form-label mt-3">Fecha de pago</label>
                         <input v-model="fecha" type="date" class="form-control" placeholder="Ingrese fecha">
-                        <button type="button" class="btn btn-success mt-3" @click="guardarDatos">Guardar pago</button>
-                        <button type="button" class="btn btn-danger mt-3" style="margin-left: 90px;"
-                            @click="borrarDatos">BORRAR DATOS</button>
+                        <button type="button" class="btn btn-success mt-3 float-start" @click="guardarDatos">Guardar pago</button>
+                        <button type="button" class="btn btn-danger mt-3 float-end" @click="borrarDatos">BORRAR DATOS</button>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,9 @@ const mispropiedades = {
         return {
             descripcion: '',
             tiempo: '',
-            lista_tareas: []
+            lista_tareas: [],
+            indice:null
+            //Cree el indice para utilizarlo luego en actualizar, por que no puedo usarlo del v_for
         }
 
     },
@@ -50,6 +52,23 @@ const mispropiedades = {
         eliminar() {
             localStorage.removeItem("tareas");
             this.listarTareas();
+        },
+        llenarFormulario(index) {
+        //Al llenar descripcion que se usa con v-model en la descripcion, repercute en todos lados y los llena, reutilizamso todo.
+            this.descripcion = this.lista_tareas[index].descripcion;
+            this.tiempo = this.lista_tareas[index].tiempo;
+        //Todo lo que creo en el data accedo con un "this". En este caso, accedo para llenarlo con el index y utilizarlo fuera del v-for en el HTML
+            this.indice = index;
+        },
+        actualizarTarea() {
+            this.lista_tareas[this.indice].descripcion = this.descripcion;
+            this.lista_tareas[this.indice].tiempo = this.tiempo;
+            //Ahora seteo la nueva información en el LocalStorage
+            localStorage.setItem("tareas", JSON.stringify(this.lista_tareas));
+            //Ahora los vacío para que queden en neutro para otra accion
+            this.descripcion = ''; this.tiempo = '';
+            //Para no tocar por error y vaciar la lista, vacío el index definido
+            this.indice = null;
         }
     },
     mounted() {
