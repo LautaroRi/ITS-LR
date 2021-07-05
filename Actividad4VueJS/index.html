@@ -65,8 +65,9 @@
 <!-- INPUT'S FECHA DE PAGO Y BOTONES GUARDAR PAGO/BORRAR DATOS-->
                         <label class="form-label mt-3">Fecha de pago</label>
                         <input v-model="fecha" type="date" class="form-control" placeholder="Ingrese fecha">
-                        <button type="button" class="btn btn-success mt-3 float-start" @click="guardarDatos">Guardar pago</button>
-                        <button type="button" class="btn btn-danger mt-3 float-end" @click="borrarDatos">BORRAR DATOS</button>
+                        <button v-if="indice == null" type="button" class="btn btn-success mt-3 float-start" @click="guardarDatos">Guardar pago</button>
+                        <button v-if="indice != null" type="button" class="btn btn-primary mt-3" style="margin-left: 20px;" @click="actualizarDatos">Actualizar</button>
+                        <button type="button" class="btn btn-danger mt-3 float-end" @click="borrarDatos">BORRAR DATOS TOTALES</button>
                     </div>
                 </div>
             </div>
@@ -86,10 +87,11 @@
                                 <th>Cuota</th>
                                 <th>Importe</th>
                                 <th>Fecha</th>
+                                <th>Remover</th>
                             </thead>
 <!-- BODY TABLA-->
                             <tbody>
-                                <tr v-for="datos of lista_datos">
+                                <tr v-for="(datos,index) of lista_datos">
                                     <td>{{datos.nombre}}</td>
                                     <td>{{datos.apellido}}</td>
                                     <td>{{datos.dni}}</td>
@@ -97,6 +99,10 @@
                                     <td>{{datos.cuota}}</td>
                                     <td>{{datos.importe}}</td>
                                     <td>{{datos.fecha}}</td>
+                                    <td><button type="button" class="btn btn-sm btn-outline-danger" style="margin-left: 24px;" @click="sacarDato(index)">x</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary float-end" @click="llenarCampos(index)">Edit</button>
+                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
