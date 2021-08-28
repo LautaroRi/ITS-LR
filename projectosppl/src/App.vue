@@ -22,6 +22,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/leydeohm">Ley de OHM</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/pitagoras">Pitágoras</router-link>
+          </li>
         </ul>
       </div>
     </div>

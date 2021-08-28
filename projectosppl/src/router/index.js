@@ -29,6 +29,11 @@ const routes = [
     path: '/leydeohm',
     name:'LeyOHM',
     component: () => import('../views/LeyOHM.vue')
+  },
+  {
+    path: '/pitagoras',
+    name: 'pitagoras',
+    component: () => import('../views/Pitagoras.vue')
   }
 ]
 
