@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 // el "err" va a venir con un True/false, y sin devolverá que cosa estária fallando.
 db.connect(function(err){
     if(err){
-        console.log('Error de conexión')
+        console.log('Error de conexión!')
 // El return es para que finalice, y no siga con el orden del proceso.
         return;
     }else{

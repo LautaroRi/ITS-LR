@@ -10,7 +10,7 @@ server.use(express.json())
 //Cors nos permite comunicar al cliente con el servidor y viceversa.
 server.use(cors())
 
-// morgan nos permite notificar por consola las peticiones de HTTP(put,delete,post,get(Todas forman CRUDE))
+// morgan nos permite notificar por consola las peticiones de HTTP(put,delete,post,get(Todas forman CRUD))
 server.use(morgan('dev'))
 
 // el process.env.PORT le digo que el predeterminado sea el 3000, si no, que lea y busque algun puerto abierto.
