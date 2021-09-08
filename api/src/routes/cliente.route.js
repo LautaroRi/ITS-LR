@@ -5,6 +5,7 @@ const enrutador = express.Router();
     //Traigo el database para traer la DB qué este almacena.
 const db = require('../database')
 
+//Implementación LISTAR clientes.
 enrutador.get('/clientes', (req,res) => {
 
     //Vamos a realizar una consulta a la base, es decir, una query.
@@ -22,8 +23,8 @@ enrutador.get('/clientes', (req,res) => {
     })
 });
 
+//Implementación de ELIMINAR un cliente.
 //El "/:codigo" es para que le llegue un parametro así sabemos que ID borrar.
-
 enrutador.delete('/cliente/:codigo', async (req,res) => {
 
 //capturo el codigo, que es un parametro, y lo dejo en una constante que utilizaré luego.
@@ -37,9 +38,9 @@ enrutador.delete('/cliente/:codigo', async (req,res) => {
         res.json('Operación exitosa!')
     }
    })
-
 });
 
+//Implementación de POSTEAR un nuevo cliente.
 enrutador.post('/cliente', async (req,res) => {
 //Estoy boteniendo el BODY de HTTP que ejecuto al solicitar un POST
     const unCliente = req.body;
@@ -52,7 +53,39 @@ enrutador.post('/cliente', async (req,res) => {
             res.json("El cliente se insertó exitosamente!")
         }
     })
+});
 
-})
+//Implementación y creación de ruta cliente * UPDATE
+enrutador.put('/cliente/:codigo', async (req,res) => {
+
+    //Primer paso: Capturar el código
+    const id = req.params.codigo;
+    //Segundo paso: Capturar body, es decir, los datos del cliente modificado.
+    const clienteModificado = req.body;
+
+    await db.query('UPDATE cliente SET ? where id_cliente = ?',[clienteModificado,id], (err,result) => {
+
+        if(err){
+            return console.log('Algo falló al intentar updatear!')
+        }else{
+            res.json("El cliente se modificó correctamente!");
+        }
+    });
+});
+
+//Implementación listar un solo cliente por ID
+enrutador.get('/cliente/:codigo', async (req,res) => {
+    //Capturamos el parámetro
+    const id = req.params.codigo;
+    await db.query('SELECT * FROM cliente where id_cliente = ?',[id], (err,rows) => {
+
+        if(err){
+            return console.log('Algo ocurrió!')
+        }else{
+    //Si le pongo el [0], me returna como un OBJETO. y NO como lista, esto me ahorra el recorrer todo con un FOR.
+            res.json(rows[0])
+        }
+    })
+});
 // El navegador solo efectua "GET", solo admite ese tipo de solucitudes. El resto, se efectua en otros lugares.
 module.exports = enrutador;
