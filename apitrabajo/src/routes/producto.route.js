@@ -3,9 +3,9 @@ const enrutador = express.Router();
 const db = require('../database')
 
 //TRAER TODOS LOS PRODUCTOS.
-enrutador.get('/producto', (req,res) => {
+enrutador.get('/producto', async (req,res) => {
 
-   db.query('SELECT * FROM producto', (err,rows) =>{
+   await db.query('SELECT * FROM producto', (err,rows) =>{
        if(err){
            console.log('Algo sucedio al realizar la consulta')
        }else{
