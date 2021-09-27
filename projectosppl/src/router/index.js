@@ -18,7 +18,7 @@ const routes = [
   {
     path:'/nuestrasnoticias', //Las rutas les asigno el nombre que yo quiero
     name:'Noticias',
-    component: () => import('../views/Noticias.vue')
+    component: () => import('../views/Noticias.vue') // Le muestro de donde debe importar la vista, y qué vista
   },
   {
     path: '/publicaciones',
@@ -34,6 +34,16 @@ const routes = [
     path: '/pitagoras',
     name: 'pitagoras',
     component: () => import('../views/Pitagoras.vue')
+  },
+  {
+    path: '/cliente',
+    name: 'Cliente',
+    component: () => import('../views/Cliente.vue')
+  },
+  {
+    path: '/producto',
+    name: 'Producto',
+    component: () => import('../views/Producto.vue')
   }
 ]
 
