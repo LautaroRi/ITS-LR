@@ -56,8 +56,10 @@
                         <td>{{producto.precio_venta}}</td>
                         <td>{{producto.stock}}</td>
                         <td>
-                            <button @click="eliminarProducto(producto.id_producto)" class="btn btn-danger btn-sm">X</button>
-                            <button @click="editar(producto)" class="btn btn-primary btn-sm">Edit</button>
+                            <button @click="eliminarProducto(producto.id_producto)" type="button" class="btn btn-dark btn-sm"><i class="bi bi-trash"></i>
+</button>
+                            <button @click="editar(producto)" type="button" class="btn btn-dark btn-sm"><i class="bi bi-pencil"></i>
+</button>
                         </td>
                     </tr>
                 </tbody>

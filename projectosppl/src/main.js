@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'bootswatch/dist/solar/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 //exporto bootswatch,entro a dist, elijo la distribucion, y siempre ejecuto el "bootsrap.min.css"
