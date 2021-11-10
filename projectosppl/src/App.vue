@@ -31,6 +31,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/producto">Producto</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/socket">Indicador</router-link>
+          </li>
         </ul>
       </div>
     </div>
