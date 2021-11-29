@@ -92,7 +92,7 @@ io.on('connection', (socket) => {
                     datatotal: (info[0].blocks/1073741824).toFixed(2) + ' ' + 'GB',
                     descripcionfree: 'Espacio Libre',
                     datafree: (info[0].available/1073741824).toFixed(2) + ' ' + 'GB' ,
-                    descripcionused: 'Espacio utilizado',
+                    descripcionused: 'Espacio usado',
                     dataused: (info[0].used/1073741824).toFixed(2) + ' ' + 'GB',
                     descripcionperc: 'Espacio util. (%)',
                     dataperc: info[0].capacity,

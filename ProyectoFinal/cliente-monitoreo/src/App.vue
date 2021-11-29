@@ -2,32 +2,13 @@
 <template>
   <div class="row container-fluid">
     <div class="col-2 bg-dark">
-      <div
-        class="
-          d-flex
-          flex-column
-          align-items-center align-items-sm-start
-          text-white
-          min-vh-100
-        "
-      >
-        <a
-          href="/"
-          class="
-            d-flex
-            align-items-center
-            text-white text-decoration-none
-          "
-        >
+      <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center text-white text-decoration-none">
           <span class="fs-5 d-none d-sm-inline">IP's control</span>
         </a>
         <ul class="nav flex-column nav-tabs-border-color:gray-300;">
           <li class="nav-item">
-            <a
-              href="#submenu1"
-              data-bs-toggle="collapse"
-              class="nav-link disabled px-0 align-middle"
-            >
+            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link disabled px-0 align-middle">
               <i class="fs-6 bi bi-clipboard text-success"> Customers Data </i>
             </a>
             <router-link class="nav-link text-info" to="/clientes">
@@ -65,11 +46,7 @@
             </ul>
           </li>
           <li>
-            <a
-              href="#submenu1"
-              data-bs-toggle="collapse"
-              class="nav-link disabled px-0 align-middle"
-            >
+            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link disabled px-0 align-middle">
               <i class="fs-6 bi bi-graph-up-arrow text-success"> Graphics </i>
             </a>
             <ul class="collapse show nav flex-column" id="submenu1" data-bs-parent="#menu">
